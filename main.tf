@@ -16,7 +16,7 @@ resource "aws_instance" "main" {
 # Creates DNS Record
 resource "aws_route53_record" "main" {
   zone_id = data.aws_route53_zone.main.id
-  name    = "${var.name}-${var.env}.expense.internal"
+  name    = "${var.name}-${var.env}.exp.in"
   type    = "A"
   ttl     = 10
   records = [aws_instance.main.private_ip]
@@ -41,7 +41,7 @@ resource "null_resource" "app" {
   provisioner "remote-exec" { # This let's the execution to happen on the remote node
     inline = [
       "pip3.11 install hvac",
-      "ansible-pull -U https://github.com/B58-CloudDevOps/ansible.git -e vault_token=${var.vault_token} -e COMPONENT=${var.name} -e ENV=${var.env} expense-pull.yml"
+      "ansible-pull -U https://github.com/DRT9999/Ansible_App.git -e vault_token=${var.vault_token} -e COMPONENT=${var.name} -e ENV=${var.env} expense-pull.yml"
     ]
   }
 }
