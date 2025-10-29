@@ -10,7 +10,7 @@ data "aws_route53_zone" "main" {
 #     }
 # }
 
-data "aws_ami" "amiid" {
+data "aws_ami" "main" {
   most_recent      = true
   name_regex       = "RAVITEJA1"  #"ami-0fcc78c828f981df2"
   owners           = ["469861001016"]
