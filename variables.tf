@@ -10,4 +10,4 @@ variable "iam_role" {
 }
 
 variable "ami" {}
-# variable "zone_id" {}
+variable "zone_id" {}
