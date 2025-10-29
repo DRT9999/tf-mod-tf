@@ -9,5 +9,5 @@ variable "iam_role" {
   default = "ec2_role"
 }
 
-# variable "ami" {}
+variable "ami" {}
 # variable "zone_id" {}
