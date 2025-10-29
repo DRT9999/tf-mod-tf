@@ -41,7 +41,7 @@ resource "null_resource" "app" {
   provisioner "remote-exec" { # This let's the execution to happen on the remote node
     inline = [
       "sudo yum update -y",
-      "sudo yum install -y python3 git",
+      #"sudo yum install -y python3 git",
       "sudo pip3.11 install ansible hvac",
       "ansible-pull -U https://github.com/DRT9999/Ansible_App.git -e vault_token=${var.vault_token} -e COMP=${var.name} -e env=${var.env} exppull.yml"
     ]
